@@ -9,7 +9,7 @@
   "author": "DarekGRAJEK",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.3.0",
+    "discord.js": "^11.3.2",
     "ms": "^2.1.1"
   }
 }
