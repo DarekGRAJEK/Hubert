@@ -1,1 +1,1 @@
-worker: Hubert
+worker: node index.js
