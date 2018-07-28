@@ -4,6 +4,7 @@ const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 const token = process.env.token;
 bot.commands = new Discord.Collection();
+let coins = require("./coins.json");
 
 
 fs.readdir("./commands/", (err, files) => {
