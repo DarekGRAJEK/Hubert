@@ -32,15 +32,11 @@ bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
 
-  if(!coins[message.author.id]){
-
-coins[message.author.id] = {
-
-coins: 0
-
-};
-
-}
+ 	if(!coins[message.author.id]){ a
+ 			coins[message.author.id] = {
+ 				coins: 0
+ 			};
+ 	}
 
 let coinAmt = Math.floor(Math.random() * 3) + 1;
 let baseAmt = Math.floor(Math.random() * 3) + 1;
@@ -67,7 +63,7 @@ message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
   let args = messageArray.slice(1);
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
-
+  } 
 });
 
 bot.login(token);
