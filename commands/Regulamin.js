@@ -6,12 +6,13 @@ if(!rMember) return message.reply("Nie znaleziono nicku");
  await message.delete();
    
     let role = message.guild.roles.find(`name`, "Regulamin✅");
+    let role2 = message.guild.roles.find(`name`, "Regulamin⬛");
     
     if(!role) return message.replay("Error 2!")
 
 
     await(rMember.addRole(role.id));
-
+    await(rMember.removeRole(role2.id));
    
 }
 
