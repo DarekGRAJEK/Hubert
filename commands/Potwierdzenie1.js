@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
  
-    let rMember = message.author.user.username;
+    let rMember = message.author.user.id;
     let role = message.guild.roles.find(`name`, "Regulamin✅");
     if(!role) return message.replay("Error 2!")
 
