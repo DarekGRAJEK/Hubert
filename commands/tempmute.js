@@ -1,13 +1,15 @@
 const Discord = require("discord.js");
 const ms = require("ms");
+const errors = require("../utility/error.js")
+
 
 module.exports.run = async (bot, message, args) => {
 
   //!tempmute @user 1s/m/h/d
 
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-  if(!tomute) return message.reply("Couldn't find user.");
-  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Can't mute them!");
+  if(!tomute) return errors.cantfindUser(channel);
+  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Can't mute them!").then(m => m.delete(5000));
   let muterole = message.guild.roles.find(`name`, "🔕🔇");
   //start of create role
   if(!muterole){
@@ -29,14 +31,14 @@ module.exports.run = async (bot, message, args) => {
   }
   //end of create role
   let mutetime = args[1];
-  if(!mutetime) return message.reply("You didn't specify a time!");
+  if(!mutetime) return message.reply("You didn't specify a time!").then(m => m.delete(5000));
 
   await(tomute.addRole(muterole.id));
-  message.reply(`<@${tomute.id}> has been muted for ${ms(ms(mutetime))}`);
+  message.reply(`<@${tomute.id}> has been muted for ${ms(ms(mutetime))}`).then(m => m.delete(5000));
 
   setTimeout(function(){
     tomute.removeRole(muterole.id);
-    message.channel.send(`<@${tomute.id}> has been unmuted!`);
+    message.channel.send(`<@${tomute.id}> has been unmuted!`).then(m => m.delete(5000));
   }, ms(mutetime));
 
 

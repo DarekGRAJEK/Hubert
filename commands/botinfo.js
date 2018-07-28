@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
       .addField("Prefix (conventional) is", "**$**")
       .addField("Created by", "DarekGRAJEK") 
 
-     return message.channel.send(botembed);
+     return message.send(botembed);
 
     }
 
