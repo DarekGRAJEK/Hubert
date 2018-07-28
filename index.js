@@ -57,7 +57,7 @@ let coinEmbed = new Discord.RichEmbed()
 .setColor("#0000FF")
 .addField("💸", `${coinAmt} coins added!`);
 
-message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
+message.channel.send(coinEmbed).then(msg => {msg.delete(5000)})
 
 
 
