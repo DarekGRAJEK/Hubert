@@ -11,7 +11,7 @@ let sicon = message.guild.displayAvatarURL;
       .addField("You Joined", message.member.joinedAt)
       .addField("Total Members", message.guild.memberCount)
 
-      return message.send(serverembed)
+      return message.send(serverembed);
 }
 module.exports.help = {
     name: "serverinfo"

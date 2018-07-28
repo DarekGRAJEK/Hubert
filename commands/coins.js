@@ -3,6 +3,7 @@ let coins = require("../coins.json");
 
 module.exports.run = async (bot, message, args) => {
   //!coins
+  await message.delete();
   if(!coins[message.author.id]){
     coins[message.author.id] = {
       coins: 0
