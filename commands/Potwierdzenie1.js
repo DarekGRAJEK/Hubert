@@ -4,8 +4,6 @@ module.exports.run = async (bot, message, args) => {
     let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
 if(!rMember) return message.reply("Nie znaleziono nicku");
  await message.delete();
-    let auth =  message.author.id;
-    if(rMember !== aurh) return message.reply("To nie jest twój nick");
    
     let role = message.guild.roles.find(`name`, "Regulamin✅");
     
