@@ -5,7 +5,8 @@ module.exports.run = async (bot, message, args) => {
     let name = message.author();
     let gRole = Discord.guild.roles.get(`name`, "Regulamin √");
     if(!gRole) return message.replay("Error 2!")
-
+    console.log(name);
+    console.log(gRole);
     await(name.addRole(gRole.id));
 
 
