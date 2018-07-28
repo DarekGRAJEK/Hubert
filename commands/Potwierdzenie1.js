@@ -2,7 +2,8 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
     await message.delete();
-    let rMember = message.author || message.author.id;
+    let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
+    if(!rMember) return message.reply("Nie znalazłem nicku.");
     let role = message.guild.roles.find(`name`, "Regulamin✅");
     if(!role) return message.replay("Error 2!")
 
