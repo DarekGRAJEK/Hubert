@@ -2,8 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
     await message.delete();
-    let role = "Regulamin √" 
-    let gRole = Discord.guild.roles.get(`name`, role);
+    let gRole = Discord.guild.roles.get(`name`, "Regulamin √");
     if(!gRole) return message.replay("Error 2!")
 
     if (message.author.id.role.has(gRole.id));
