@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
       .addField("Created by", "DarekGRAJEK") 
 
      
-      message.channel.send(serverembed).then(msg => {msg.delete(5000)});
+      message.channel.send(botembed).then(msg => {msg.delete(5000)});
 
 }
 
