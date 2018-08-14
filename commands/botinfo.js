@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-      await message.delete;
+      await message.delete();
       let bicon = bot.user.displayAvatarURL;
       let botembed = new Discord.RichEmbed()
       .setDescription("Bot Information")
@@ -11,7 +11,8 @@ module.exports.run = async (bot, message, args) => {
       .addField("Prefix (conventional) is", "**$**")
       .addField("Created by", "DarekGRAJEK") 
 
-      message.channel.send(serverembed).then(msg => {msg.delete(8000)});
+     
+      message.channel.send(serverembed).then(msg => {msg.delete(5000)});
 
 }
 
